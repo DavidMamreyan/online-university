@@ -17,8 +17,8 @@ import java.util.GregorianCalendar;
 
 @Configuration
 public class LoadDatabase {
-    private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
-
+    // private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+    //
     @Bean
     CommandLineRunner initDatabase(
             StudentRepository studentRepository,
@@ -45,11 +45,11 @@ public class LoadDatabase {
                                                ))
                                                .group(groupRepository.save(new Group("2020-1-1")))
                                                .build());
-
-                students = studentRepository.findAll();
+                //
+                // students = studentRepository.findAll();
             }
-
-            students.forEach(student -> log.info("Students:\n" + student));
+            //
+            // students.forEach(student -> log.info(student.toString()));
         };
     }
 }

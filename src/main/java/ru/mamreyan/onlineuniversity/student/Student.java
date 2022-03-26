@@ -174,7 +174,7 @@ public class Student {
                birthDate == null ||
                entryDate == null ||
                group == null;
-               // entryDate == null;
+        // entryDate == null;
     }
 
     public boolean isSamePerson(Object object) {
@@ -269,9 +269,9 @@ public class Student {
                 .append(",\nsex = ")
                 .append(this.sex)
                 .append(",\nbirthDate = ")
-                .append(this.birthDate.toInstant())
+                .append(this.birthDate == null ? "null" : this.birthDate.getTime())
                 .append(",\nentryDate = ")
-                .append(this.entryDate.toInstant())
+                .append(this.entryDate == null ? "null" : this.entryDate.getTime())
                 .append(",\ngroup = ")
                 .append(this.group)
                 .append(",\nactive = ")

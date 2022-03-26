@@ -23,7 +23,7 @@ public class Group {
             throw new IllegalArgumentException("name is null");
         }
 
-        this.name = name;
+        this.name   = name;
         this.active = true;
     }
 
@@ -90,7 +90,7 @@ public class Group {
         return (stringBuilder
                 .append("Group №")
                 .append(this.id)
-                .append(",\nname = ")
+                .append(": {\nname = ")
                 .append(this.name)
                 .append(",\nactive = ")
                 .append(this.active)
