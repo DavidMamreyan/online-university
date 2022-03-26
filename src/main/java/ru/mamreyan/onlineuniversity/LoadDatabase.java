@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.mamreyan.onlineuniversity.employee.Employee;
-import ru.mamreyan.onlineuniversity.employee.EmployeeRepository;
+import ru.mamreyan.onlineuniversity.student.Student;
+import ru.mamreyan.onlineuniversity.student.StudentRepository;
 
 import java.util.Collection;
 
@@ -16,17 +16,17 @@ public class LoadDatabase {
 
     @Bean
     CommandLineRunner initDatabase(
-            EmployeeRepository employeeRepository
+            StudentRepository studentRepository
     ) {
         return args -> {
-            Iterable<Employee> employees = employeeRepository.findAll();
+            Iterable<Student> students = studentRepository.findAll();
 
-            if (employees instanceof Collection && ((Collection<Employee>) employees).size() <= 1) {
+            if (students instanceof Collection && ((Collection<Student>) students).size() <= 1) {
 
-                employees = employeeRepository.findAll();
+                students = studentRepository.findAll();
             }
 
-            employees.forEach(employee -> log.info("Employees:\n" + employee));
+            students.forEach(student -> log.info("Students:\n" + student));
         };
     }
 }

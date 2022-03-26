@@ -1,4 +1,4 @@
-package ru.mamreyan.onlineuniversity.employee;
+package ru.mamreyan.onlineuniversity.student;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-class EmployeeNotValidAdvice {
+class StudentNotValidAdvice {
     @ResponseBody
-    @ExceptionHandler (EmployeeNotValidException.class)
+    @ExceptionHandler (StudentNotValidException.class)
     @ResponseStatus (HttpStatus.NOT_ACCEPTABLE)
-    String employeeNotValidHandler(EmployeeNotValidException ex) {
+    String studentNotValidHandler(StudentNotValidException ex) {
         return ex.getMessage();
     }
 }

@@ -1,4 +1,4 @@
-package ru.mamreyan.onlineuniversity.employee;
+package ru.mamreyan.onlineuniversity.student;
 
 public enum Sex {
     MALE,

@@ -1,4 +1,4 @@
-package ru.mamreyan.onlineuniversity.employee;
+package ru.mamreyan.onlineuniversity.student;
 
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
@@ -9,17 +9,17 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Component
-class EmployeeModelAssembler implements RepresentationModelAssembler<Employee, EntityModel<Employee>> {
+class StudentModelAssembler implements RepresentationModelAssembler<Student, EntityModel<Student>> {
     @NonNull
     @Override
-    public EntityModel<Employee> toModel(
+    public EntityModel<Student> toModel(
             @NonNull
-                    Employee employee
+                    Student student
     ) {
         return EntityModel.of(
-                employee,
-                linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
-                linkTo(methodOn(EmployeeController.class).all()).withRel("employees")
+                student,
+                linkTo(methodOn(StudentController.class).one(student.getId())).withSelfRel(),
+                linkTo(methodOn(StudentController.class).all()).withRel("students")
         );
     }
 }
