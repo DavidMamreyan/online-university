@@ -2,13 +2,11 @@ package ru.mamreyan.onlineuniversity.group;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table (name = "\"group\"")
 public class Group {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -26,6 +24,7 @@ public class Group {
         }
 
         this.name = name;
+        this.active = true;
     }
 
     public Long getId() {

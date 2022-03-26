@@ -174,6 +174,7 @@ public class Student {
                birthDate == null ||
                entryDate == null ||
                group == null;
+               // entryDate == null;
     }
 
     public boolean isSamePerson(Object object) {
