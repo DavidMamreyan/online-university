@@ -21,6 +21,7 @@ public class Student {
     @NotNull private GregorianCalendar birthDate;
     @NotNull private GregorianCalendar entryDate;
 
+    @NotNull
     @ManyToOne
     @JoinColumn (name = "group_id",
                  foreignKey = @ForeignKey (name = "group_id_fkey"))

@@ -14,14 +14,13 @@ public class Group {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull private String name;
-
+    @NotNull private String  name;
     @NotNull private boolean active;
 
     Group() {
     }
 
-    Group(String name) {
+    public Group(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("name is null");
         }
